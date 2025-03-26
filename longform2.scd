@@ -111,23 +111,27 @@ x.set(\freq, 1000);
 
 
 (
-8.do{
+x = (1..127).do{
 	Synth(
 		\bpfsaw0,
 		[
-			\freq, exprand(44,440.5).round(43),
-			\amp, 0.75,
+			\freq, exprand(44,440.5).round(42),
+			\amp, 0.5,
 			\cfmin, 44 * 2,
 			\cfmax, 43.5 * 420,
-			\rqmin, rrand(0.6, 0.08),
-			\rqmax, rrand(0.3, 0.1),
+			\rqmin, exprand(0.006, 0.08),
+			\rqmax, exprand(0.03, 0.1),
 			\cfhzmin, rrand(0.1,7),
 			\cfhzmax, rrand(0.01, 7),
+			\atk, 10,
+			\sus, 20,
+			\rel, 10,
 			\pan, rrand(-1.0, 1.0)
 		]
 	);
 };
 )
+x.stop;
 
 
 (
